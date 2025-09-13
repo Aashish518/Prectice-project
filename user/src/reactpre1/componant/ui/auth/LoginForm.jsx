@@ -21,7 +21,7 @@ const LoginForm = () => {
 
     return (
         <FormLayout
-            title="Welcome Back 👋"
+            title="Welcome Back"
             subtitle="Please login to your account"
         >
             <Input
