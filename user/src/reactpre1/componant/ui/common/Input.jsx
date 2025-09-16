@@ -1,27 +1,23 @@
-import { motion } from "framer-motion";
-
 const Input = ({
     name,
     value,
     placeholder,
     onChange,
     type = "text",
-    error = false,   
+    error = false,
     disabled = false,
 }) => {
     return (
         <div className="w-full flex flex-col gap-1">
-            <motion.input
+            <input
                 type={type}
                 name={name}
                 value={value}
                 placeholder={placeholder}
                 onChange={onChange}
                 disabled={disabled}
-                whileFocus={!disabled ? { scale: 1.02 } : {}}
-                transition={{ type: "spring", stiffness: 250 }}
                 className={`border rounded-xl px-4 py-2.5 w-full
-          outline-none transition-all duration-300 shadow-sm
+          outline-none transition-all duration-200 shadow-sm
           placeholder-gray-400 text-gray-700
           ${disabled
                         ? "bg-gray-100 cursor-not-allowed opacity-70 border-gray-200"

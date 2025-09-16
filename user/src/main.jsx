@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import "./App.css";
-import App from './reactpre1/App';
+import App from './reacthookprectice/App';
+// import App from './reactpre1/App';
 // import Prectice from './localCRUD/Prectice';
 // import Appcode from './sqlCRUD/Appcode';
 

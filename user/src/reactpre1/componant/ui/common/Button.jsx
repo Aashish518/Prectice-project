@@ -1,11 +1,9 @@
-import { motion } from "framer-motion";
-
 const Button = ({
     type = "button",
     label,
     handleClick,
     disabled = false,
-    variant = "default", 
+    variant = "default",
 }) => {
     const variantClasses = {
         default:
@@ -16,20 +14,16 @@ const Button = ({
     };
 
     return (
-        <motion.button
+        <button
             type={type}
             onClick={handleClick}
             disabled={disabled}
-            whileHover={!disabled ? { scale: 1.08 } : {}}
-            whileTap={!disabled ? { scale: 0.92 } : {}}
-            whileFocus={!disabled ? { scale: 1.03 } : {}}
-            transition={{ type: "spring", stiffness: 300 }}
             className={`relative overflow-hidden text-white font-semibold rounded-xl px-6 py-2.5 shadow-lg 
-        focus:outline-none focus:ring-2
-        ${variantClasses[variant]} 
-        ${disabled ? "opacity-50 cursor-not-allowed" : "hover:shadow-xl"}`}
+                focus:outline-none focus:ring-2
+                ${variantClasses[variant]} 
+                ${disabled ? "opacity-50 cursor-not-allowed" : "hover:shadow-xl"}
+                transition duration-200 transform active:scale-95 hover:scale-105`}
         >
-            {/* Hover overlay effect */}
             <span
                 className={`absolute inset-0 bg-gradient-to-r ${variant === "red"
                         ? "from-orange-500 via-red-500 to-pink-500"
@@ -39,9 +33,8 @@ const Button = ({
                     } opacity-0 hover:opacity-30 transition duration-500`}
             ></span>
 
-            {/* Label */}
             <span className="relative z-10">{label}</span>
-        </motion.button>
+        </button>
     );
 };
 

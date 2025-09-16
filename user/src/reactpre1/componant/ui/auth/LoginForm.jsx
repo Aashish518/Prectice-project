@@ -2,6 +2,7 @@ import { useState } from "react";
 import FormLayout from "../../layout/FormLayout";
 import Input from "../common/Input";
 import Button from "../common/Button";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
     const [form, setForm] = useState({
@@ -38,7 +39,26 @@ const LoginForm = () => {
                 placeholder="Enter your password"
                 onChange={handleChange}
             />
+
+            <div className="flex justify-center">
+                <Link
+                    to="/forgot-password"
+                    className="text-blue-600 hover:underline cursor-pointer"
+                >
+                    Forget Password
+                </Link>
+            </div>
+
             <Button type="submit" label="Login" handleClick={handleSubmit} />
+
+            <div className="flex justify-center">
+                <Link
+                    to="/register"
+                    className="text-blue-600 hover:underline cursor-pointer"
+                >
+                    Register Now
+                </Link>
+            </div>
         </FormLayout>
     );
 };
